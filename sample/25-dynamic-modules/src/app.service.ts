@@ -5,6 +5,7 @@ import { ConfigService } from './config/config.service';
 export class AppService {
   private helloMessage: string;
 
+  //ConfigService을 받아옴. 
   constructor(configService: ConfigService) {
     this.helloMessage = configService.get('HELLO_MESSAGE');
   }
