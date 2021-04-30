@@ -8,6 +8,8 @@ import {
 import { plainToClass } from 'class-transformer';
 import { validate } from 'class-validator';
 
+
+//pipes/ValidationPipe와 기본 ValidationPipe가 있음. 
 @Injectable()
 export class ValidationPipe implements PipeTransform<any> {
   async transform(value: any, metadata: ArgumentMetadata) {

@@ -1,5 +1,4 @@
 import { Body, Controller, Get, Param, Post, UseGuards } from '@nestjs/common';
-import { Roles } from '../common/decorators/roles.decorator';
 import { RolesGuard } from '../common/guards/roles.guard';
 import { ParseIntPipe } from '../common/pipes/parse-int.pipe';
 import { CatsService } from './cats.service';
@@ -9,12 +8,13 @@ import { Cat } from './interfaces/cat.interface';
 @UseGuards(RolesGuard)
 @Controller('cats')
 export class CatsController {
-  constructor(private readonly catsService: CatsService) {}
+  constructor(private readonly catsService: CatsService) {} //CatsService의 주입 
 
   @Post()
-  @Roles('admin')
-  async create(@Body() createCatDto: CreateCatDto) {
-    this.catsService.create(createCatDto);
+  //@Roles('admin')
+  async create(@Body() createCatDto: CreateCatDto) { //CreateCatDto => 객체를 나름. 
+    console.log("create cat");
+    return this.catsService.create(createCatDto);
   }
 
   @Get()
