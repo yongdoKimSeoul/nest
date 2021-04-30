@@ -1,6 +1,12 @@
-//class Validation을 설치할 수도 있다. 
+import { IsEmail, IsInt, IsNotEmpty, IsString } from 'class-validator';
+//class Validation을 설치할 수도 있다.
 export class CreateCatDto {
-  readonly name: string;
-  readonly age: number;
-  readonly breed: string;
+  @IsString()
+  name: string;
+
+  @IsInt()
+  age: number;
+
+  @IsString()
+  breed: string;
 }
