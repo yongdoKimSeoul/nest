@@ -3,6 +3,7 @@ import { Document } from 'mongoose';
 
 export type CatDocument = Cat & Document;
 
+//MongoDB에 들어갈 doc들의 타입을 설정하는 곳. 
 @Schema()
 export class Cat {
   @Prop()
