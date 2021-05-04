@@ -10,3 +10,5 @@ import { OrdersModule } from './orders/orders.module';
   providers: [AppService],
 })
 export class AppModule {}
+
+//EventEmitterModule.forRoot() 이벤트 초기화, 이벤트 리스너 등록 

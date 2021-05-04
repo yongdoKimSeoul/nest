@@ -19,6 +19,7 @@ export class OrdersService {
     },
   ];
 
+  //이벤트를 전달 (즉, 발생) 위해 생성자에 주입 
   constructor(private eventEmitter: EventEmitter2) {}
 
   create(createOrderDto: CreateOrderDto) {
@@ -28,6 +29,7 @@ export class OrdersService {
     };
     this.orders.push(order);
 
+    //여기서 리스너를 추가적으로 발생. 
     const orderCreatedEvent = new OrderCreatedEvent();
     orderCreatedEvent.name = order.name;
     orderCreatedEvent.description = order.description;
